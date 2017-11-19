@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
 import { BannerMainComponent } from "./banner-main/banner-main.component";
+import { FooterComponent } from "./footer/footer.component";
 
 @NgModule({
   imports: [
@@ -9,8 +10,9 @@ import { BannerMainComponent } from "./banner-main/banner-main.component";
   ],
   exports: [
     NavComponent,
-    BannerMainComponent
+    BannerMainComponent,
+    FooterComponent
   ],
-  declarations: [NavComponent, BannerMainComponent]
+  declarations: [NavComponent, BannerMainComponent, FooterComponent]
 })
 export class SharedModule { }
