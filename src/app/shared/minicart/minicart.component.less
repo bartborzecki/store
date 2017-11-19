@@ -1,0 +1,177 @@
+@bg: #ffffff;
+@text: #444;
+@max-width: 420px;
+@links-bg: #eee;
+@update-btn-border: #acb2b5;
+@summary-bg: #fcf8ec;
+
+.minicart {
+
+  max-width: @max-width;
+  display: none;
+  position: fixed;
+  top: 56px;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  overflow-y: auto;
+  background: @bg;
+
+  &.show {
+    display: block;
+  }
+
+  &__link {
+    float: left;
+    font-size: 14px;
+    height: 54px;
+    line-height: 12px;
+    padding: 21px 11px 21px 50px;
+    text-align: left;
+    width: 100%;
+    background: @links-bg;
+  }
+
+  &__product {
+    padding: 30px 40px 30px 30px;
+    width: 98%;
+    margin: 0 1%;
+    position: relative;
+    display: block;
+    float: left;
+    clear: both;
+  }
+
+  &__product-image-wrapper {
+    width: 30%;
+    float: left;
+  }
+
+  &__remove-button {
+    width: 20px;
+    float: right;
+  }
+
+  &__product-info-wrapper {
+    min-height: 65px;
+    position: relative;
+    top: -3px;
+    overflow: visible;
+    float: left;
+    width: 60%;
+    text-align: left;
+    padding-left: 18px;
+  }
+
+  &__product-info {
+    font-size: 13px;
+    color: @text;
+    margin-bottom: 5px;
+    width: 100%;
+    float: left;
+
+    &--title {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  &__product-subtotal-wrapper {
+    float: left;
+    width: 70%;
+  }
+
+  &__product-qty-wrapper {
+    width: 70%;
+    text-align: left;
+    float: left;
+    padding: 12px 0 0 18px;
+  }
+
+  &__product-price-wrapper {
+    width: 30%;
+    float: left;
+    text-align: right;
+    padding-top: 12px;
+  }
+
+  &__product-price {
+    font-weight: bold;
+  }
+
+  &__update-button {
+    float: left;
+    padding: 0;
+    height: 25px;
+    width: 25px;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    border: 1px solid @update-btn-border;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--plus {
+      border-left: none;
+    }
+
+    &--qty {
+      border-top: 1px solid @update-btn-border;
+      border-bottom: 1px solid @update-btn-border;
+
+      &:hover {
+        cursor: auto;
+      }
+    }
+
+    &--minus {
+      border-right: none;
+    }
+  }
+
+  &__bottom-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &__summary-wrapper {
+    display: inline-block;
+    width: 100%;
+    background: @summary-bg;
+  }
+
+  &__summary-text {
+    line-height: 125%;
+    letter-spacing: .01em;
+    color: @text;
+    padding: 27px 40px 27px 30px;
+
+    &--message {
+      font-size: 18px;
+      float: left;
+      text-align: left;
+
+    }
+
+    &--total {
+      float: right;
+      clear: right;
+      text-align: right;
+      font-size: 16px;
+    }
+  }
+
+  &__checkout_button {
+    padding: 30px;
+  }
+
+
+
+}
