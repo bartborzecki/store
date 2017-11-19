@@ -26,6 +26,24 @@ export class ProductsListComponent implements OnInit {
       name: "Basketball Light",
       price: 22.6,
       thumbnail: "../../assets/images/basketball-light1.png"
+    },
+    {
+      id: 4,
+      name: "Basketball Light",
+      price: 22.6,
+      thumbnail: "../../assets/images/basketball-light1.png"
+    },
+    {
+      id: 5,
+      name: "Basketball Light",
+      price: 22.6,
+      thumbnail: "../../assets/images/basketball-light1.png"
+    },
+    {
+      id: 6,
+      name: "Basketball Light",
+      price: 22.6,
+      thumbnail: "../../assets/images/basketball-light1.png"
     }
   ];
 
