@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {StoreModule} from "./store/store.module";
+import { StoreModule } from "./store/store.module";
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import {StoreModule} from "./store/store.module";
   ],
   imports: [
     BrowserModule,
-    StoreModule
+    StoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
