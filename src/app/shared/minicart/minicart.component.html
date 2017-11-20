@@ -1,7 +1,12 @@
-<div class="minicart show">
+<span (click)="toggle(minicart)">
+    <span class="nav-link">Cart<span class="count">2</span></span>
+</span>
+
+
+<div class="minicart" #minicart>
 
     <div class="minicart__links">
-        <a href="#" class="minicart__link">Continue Shopping</a>
+        <span (click)="hide(minicart)" class="minicart__link">Continue Shopping</span>
     </div>
 
     <div class="minicart__products">
@@ -48,10 +53,10 @@
         </div>
 
         <div class="minicart__checkout-button">
-            <a href="/checkout/" class="gant-btn btn-checkout btn-fluid">Checkout</a>
+            <a href="/checkout/" class="button button--big button--dark">Checkout</a>
         </div>
-        <div class="cart-link">
-            <a href="/bag/">View cart</a>
+        <div class="minicart__cart-button">
+            <a href="/cart/" class="button button--text-derk">View cart</a>
         </div>
     </div>
 </div>

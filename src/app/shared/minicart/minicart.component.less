@@ -30,6 +30,10 @@
     text-align: left;
     width: 100%;
     background: @links-bg;
+    color: @text;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__product {
@@ -139,6 +143,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    background: @bg;
   }
 
   &__summary-wrapper {
@@ -168,10 +173,16 @@
     }
   }
 
-  &__checkout_button {
+  &__checkout-button {
     padding: 30px;
   }
 
-
+  &__cart-button {
+    width: 100%;
+    padding: 0 16px 30px 16px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+  }
 
 }
