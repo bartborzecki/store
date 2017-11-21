@@ -1,5 +1,4 @@
-import {Component, OnInit, ElementRef} from '@angular/core';
-import {ViewChild} from "@angular/core/src/metadata/di";
+import {Component, OnInit , Input} from '@angular/core';
 
 @Component({
   selector: 'app-minicart',
@@ -7,28 +6,10 @@ import {ViewChild} from "@angular/core/src/metadata/di";
   styleUrls: ['./minicart.component.less']
 })
 export class MinicartComponent implements OnInit {
-
-
-  constructor() { }
+  @Input() totalCost : number;
 
   ngOnInit() {
   }
-
-
-  toggle(minicartEl) {
-    if (minicartEl.classList.contains('show')) {
-      minicartEl.classList.remove('show');
-    } else {
-      minicartEl.classList.add('show');
-    }
-  }
-
-  hide(minicartEl) {
-    if (minicartEl.classList.contains('show')) {
-      minicartEl.classList.remove('show');
-    }
-  }
-
 
 
 }

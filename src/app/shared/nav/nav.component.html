@@ -18,7 +18,9 @@
     </ul>
     <ul class="navbar-nav">
       <li class="nav__link">
-        <app-minicart></app-minicart>
+        <span (click)="toggleMinicart()">
+            <span class="nav-link">Cart<span class="count">2</span></span>
+        </span>
       </li>
     </ul>
   </div>

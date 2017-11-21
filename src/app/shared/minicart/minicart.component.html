@@ -1,9 +1,4 @@
-<span (click)="toggle(minicart)">
-    <span class="nav-link">Cart<span class="count">2</span></span>
-</span>
-
-
-<div class="minicart" #minicart>
+<div #minicart id="minicart" class="minicart" [ngClass]="{show: shouldShow, hide: !shouldShow}">
 
     <div class="minicart__links">
         <span (click)="hide(minicart)" class="minicart__link">Continue Shopping</span>
@@ -49,7 +44,7 @@
 
         <div class="minicart__summary-wrapper">
             <span class="minicart__summary-text minicart__summary-text--message">Total (2 items)</span>
-            <span class="minicart__summary-text minicart__summary-text--total">$450.00</span>
+            <span class="minicart__summary-text minicart__summary-text--total">${{ totalCost }}</span>
         </div>
 
         <div class="minicart__checkout-button">

@@ -8,6 +8,7 @@ import { Product } from "../models/product";
 })
 export class ProductsListComponent implements OnInit {
 
+  totalCost : number;
   products : Product[] = [
     {
       id: 1,
@@ -50,6 +51,13 @@ export class ProductsListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.countTotalCost();
+  }
+
+  countTotalCost() : void {
+    this.totalCost = this.products
+        .map((product) => product.price)
+        .reduce((prev, next) => prev + next);
   }
 
 }
