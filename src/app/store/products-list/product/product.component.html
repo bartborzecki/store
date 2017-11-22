@@ -1,0 +1,11 @@
+<div class="card product-card">
+  <img src="{{ thumbnail }}" class="card-img-top product-card__img">
+  <div class="card-block">
+    <p class="card-title">{{ name }}</p>
+    <p>{{ price }}</p>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#">
+      <button (click)="addProduct(productObj)" class="button--primary button--right">Add to cart</button>
+    </a>
+  </div>
+</div>

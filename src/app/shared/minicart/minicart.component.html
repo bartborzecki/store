@@ -4,54 +4,61 @@
         <span (click)="hide(minicart)" class="minicart__link">Continue Shopping</span>
     </div>
 
-    <div class="minicart__products">
+    <div *ngIf="productsInCart.length > 0; else noProductsInCartInfo" >
 
-        <div class="minicart__product">
-            <div class="minicart__product-image-wrapper">
-                <a href="http://www.gant.com/mens-sweaters/blue-fairisle-christmas-sweater/6335">
-                    <img src="../../assets/images/soccerball1.png" class="image" alt="Soccerball">
-                </a>
-            </div>
+        <div class="minicart__products">
 
-            <span class="minicart__remove-button">
-                <img src="../../assets/images/bin.png" class="image" alt="bin image">
-            </span>
+            <div *ngFor="let product of productsInCart;" class="minicart__product">
+                <div class="minicart__product-image-wrapper">
+                    <a href="http://www.gant.com/mens-sweaters/blue-fairisle-christmas-sweater/6335">
+                        <img src="{{ product.thumbnail }}" class="image" alt="Soccerball">
+                    </a>
+                </div>
 
-            <div class="minicart__product-info-wrapper">
-                <span class="minicart__product-info minicart__product-info--title">Soccerball</span>
-                <span class="minicart__product-info">Navy</span>
-                <span class="minicart__product-info">Size: L</span>
-            </div>
-
-            <div class="minicart__product-subtotal-wrapper">
-                <span class="minicart__product-qty-wrapper">
-                    <button class="minicart__update-button minicart__update-button--minus" type="button">-</button>
-                    <div class="minicart__update-button minicart__update-button--qty">
-                        <span class="minicart__product-qty">2</span>
-                    </div>
-                    <button class="minicart__update-button minicart__update-button--plus" type="button">+</button>
+                <span class="minicart__remove-button">
+                    <img src="../../assets/images/bin.png" class="image" alt="bin image">
                 </span>
-                <span class="minicart__product-price-wrapper">
-                    <span class="minicart__product-price">$450.00</span>
-                </span>
+
+                <div class="minicart__product-info-wrapper">
+                    <span class="minicart__product-info minicart__product-info--title">{{ product.name}}</span>
+                    <span class="minicart__product-info">Navy</span>
+                    <span class="minicart__product-info">Size: L</span>
+                </div>
+
+                <div class="minicart__product-subtotal-wrapper">
+                    <span class="minicart__product-qty-wrapper">
+                        <button class="minicart__update-button minicart__update-button--minus" type="button">-</button>
+                        <div class="minicart__update-button minicart__update-button--qty">
+                            <span class="minicart__product-qty">2</span>
+                        </div>
+                        <button class="minicart__update-button minicart__update-button--plus" type="button">+</button>
+                    </span>
+                    <span class="minicart__product-price-wrapper">
+                        <span class="minicart__product-price">{{ product.price }}</span>
+                    </span>
+                </div>
             </div>
+
         </div>
 
+
+        <div class="minicart__bottom-wrapper">
+
+            <div class="minicart__summary-wrapper">
+                <span class="minicart__summary-text minicart__summary-text--message">Total (2 items)</span>
+                <span class="minicart__summary-text minicart__summary-text--total">${{ totalCost }}</span>
+            </div>
+
+            <div class="minicart__checkout-button">
+                <a href="/checkout/" class="button button--big button--dark">Checkout</a>
+            </div>
+            <div class="minicart__cart-button">
+                <a href="/cart/" class="button button--text-derk">View cart</a>
+            </div>
+        </div>
     </div>
 
-
-    <div class="minicart__bottom-wrapper">
-
-        <div class="minicart__summary-wrapper">
-            <span class="minicart__summary-text minicart__summary-text--message">Total (2 items)</span>
-            <span class="minicart__summary-text minicart__summary-text--total">${{ totalCost }}</span>
-        </div>
-
-        <div class="minicart__checkout-button">
-            <a href="/checkout/" class="button button--big button--dark">Checkout</a>
-        </div>
-        <div class="minicart__cart-button">
-            <a href="/cart/" class="button button--text-derk">View cart</a>
-        </div>
-    </div>
+    <ng-template #noProductsInCartInfo>
+       <p>Your cart is empty</p>
+    </ng-template>
 </div>

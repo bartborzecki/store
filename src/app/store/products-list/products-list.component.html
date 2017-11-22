@@ -1,18 +1,13 @@
 <div class="layout">
   <div class="row">
-    <div *ngFor="let product of products;" class="col-sm-4">
-      <div class="card product-card">
-        <img src="{{ product.thumbnail }}" class="card-img-top product-card__img">
-        <div class="card-block">
-          <p class="card-title">{{ product.name }}</p>
-          <p>{{ product.price }}</p>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#">
-            <button class="button--primary button--right">Add to cart</button>
-          </a>
-        </div>
-      </div>
-    </div>
+    <app-product *ngFor="let product of products"
+                 [id]="product.id"
+                 [name]="product.name"
+                 [price]="product.price"
+                 [thumbnail]="product.thumbnail"
+                 [productObj]="product"
+                 class="col-sm-4">
+    </app-product>
   </div>
 </div>
 <app-minicart [totalCost]="totalCost"></app-minicart>
