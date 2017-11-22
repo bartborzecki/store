@@ -11,7 +11,7 @@ import {CartService} from "../../store/cart.service";
 export class MinicartComponent implements OnInit {
   @Input() totalCost : number;
 
-  public productsInCart: Product[] = [];
+  public productsInCart: Product[];
 
   constructor(private cartService: CartService) {
     this.productsInCart = this

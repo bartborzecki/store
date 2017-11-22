@@ -1,7 +1,7 @@
 <div #minicart id="minicart" class="minicart" [ngClass]="{show: shouldShow, hide: !shouldShow}">
 
     <div class="minicart__links">
-        <span (click)="hide(minicart)" class="minicart__link">Continue Shopping</span>
+        <span class="minicart__link">Continue Shopping</span>
     </div>
 
     <div *ngIf="productsInCart.length > 0; else noProductsInCartInfo" >
